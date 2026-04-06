@@ -1,0 +1,6 @@
+opencv-python
+mediapipe
+numpy
+pandas
+torch
+googletrans==4.0.0-rc1
