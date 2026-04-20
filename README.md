@@ -5,7 +5,7 @@ A real-time Indian Sign Language translation system powered by a Deep Learning S
 
 Unlike traditional static machine learning models (like Random Forest) that look at a single frame, this project uses a PyTorch Transformer Encoder to analyze a continuous **rolling window of 30 frames**. This allows the model to understand the *motion* and *temporal context* of signs, resulting in highly accurate, state-of-the-art gesture recognition. Translated words are automatically converted into Hindi and Marathi.
 
-<img width="1920" height="1080" alt="Isl_Transformer_Arch" src="https://github.com/user-attachments/assets/1c96d8c7-8bed-4e11-8b23-223bb5b68e6f" />
+<img width="1317" height="610" alt="Isl_Transformer_Arch" src="https://github.com/user-attachments/assets/d207db6f-b46b-4c75-b7d2-a6b573018846" />
 
 ---
 
