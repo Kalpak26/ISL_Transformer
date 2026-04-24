@@ -73,6 +73,22 @@ class HandDetector:
                 for mark in hand_landmarks:
                     x, y = int(mark.x * w), int(mark.y * h)
                     cv2.circle(img, (x, y), 4, (0, 0, 255), -1)
+                #Draw Bounding Box
+                # 1. Grab all the X and Y coordinates for the current hand
+                x_coords = [int(mark.x * w) for mark in hand_landmarks]
+                y_coords = [int(mark.y * h) for mark in hand_landmarks]
+
+                # 2. Find the highest and lowest points (the edges of the hand)
+                x_min, x_max = min(x_coords), max(x_coords)
+                y_min, y_max = min(y_coords), max(y_coords)
+
+                # 3. Add a little padding so the box isn't touching the knuckles
+                padding = 20
+                x_min, y_min = max(0, x_min - padding), max(0, y_min - padding)
+                x_max, y_max = min(w, x_max + padding), min(h, y_max + padding)
+
+                # 4. Draw the box!
+                cv2.rectangle(img, (x_min, y_min), (x_max, y_max), (255, 0, 0), 2)
                     
         return img
     
