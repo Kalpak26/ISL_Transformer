@@ -21,10 +21,11 @@ isl_transformer_project/
 ├── models/               # Put your Colab-trained .pth and .json files here
 ├── output/               # Auto-generated: Stores your translation text logs
 ├── src/
-│   ├── hand_detector.py  # MediaPipe Tasks API wrapper
-│   ├── data_collection.py# Script to record sign sequences
-│   └── test_model.py     # Real-time webcam inference script
-└── requirements.txt      # Python dependencies
+│   ├── hand_detector.py             # MediaPipe Tasks API wrapper
+│   ├── data_collection.py           # Script to record sign sequences
+│   └── test_model.py                # Real-time webcam inference script
+│   └── ISL_seq_transformer.ipynb    # Training script, uploaded on Colab/Kaggle for cloud GPU 
+└── requirements.txt                 # Python dependencies
 ```
 
 ---
@@ -73,7 +74,7 @@ To train the Transformer, you need to collect sequences of yourself performing t
 Because Transformers require heavy computation, training is done on a free cloud GPU.
 
 1.  Locate your `data/sequences/` folder. Zip the `sequences/` folder into a file named `sequences.zip`.
-2.  Open Google Colab and start a new Python notebook.
+2.  Open Google Colab and upload `ISL_seq_transformer.ipynb` notebook.
 3.  Go to **Runtime > Change runtime type** and select **T4 GPU**.
 4.  Upload `sequences.zip` to the Colab files pane.
 5.  Paste the provided PyTorch training script into a cell and hit Run. 
